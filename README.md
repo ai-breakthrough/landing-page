@@ -1,6 +1,6 @@
 # CoreAI Website
 
-A React-based website served using Docker and Nginx.
+A React-based website served using Docker and Nginx, with automatic deployment to GitHub Pages.
 
 ## Docker Setup
 
@@ -54,4 +54,44 @@ docker-compose ps
 
 # Stop and remove containers
 docker-compose down
-```
+
+## GitHub Pages Deployment
+
+This project is configured with GitHub Actions to automatically deploy to GitHub Pages on every push to the main branch.
+
+### Prerequisites
+
+- GitHub repository
+- GitHub Pages enabled in repository settings
+- GitHub Actions enabled
+
+### Setup Instructions
+
+1. **Enable GitHub Pages:**
+   - Go to your repository Settings → Pages
+   - Set Source to "GitHub Actions"
+
+2. **Push your code:**
+   ```bash
+   git add .
+   git commit -m "Add GitHub Actions workflow"
+   git push origin main
+   ```
+
+3. **Monitor deployment:**
+   - Check the Actions tab in your repository
+   - The workflow will automatically build and deploy your site
+
+### Deployment Details
+
+- **Build Tool:** Vite
+- **Output Directory:** `dist/`
+- **Deployment:** Automatic on push to main/master branch
+- **URL:** `https://yourusername.github.io/your-repo-name`
+
+### Manual Deployment
+
+You can also trigger deployment manually:
+- Go to Actions tab in your repository
+- Select "Deploy to GitHub Pages" workflow
+- Click "Run workflow"
