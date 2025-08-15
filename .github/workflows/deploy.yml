@@ -37,6 +37,17 @@ jobs:
       - name: Build project
         run: npm run build
 
+      - name: Verify build output
+        run: |
+          echo "Build output contents:"
+          ls -la dist/
+          echo "HTML content:"
+          cat dist/index.html
+          echo "CSS file:"
+          ls -la dist/assets/*.css
+          echo "JS files:"
+          ls -la dist/assets/*.js
+
       - name: Ensure dist directory exists
         run: |
           if [ ! -d "dist" ]; then
