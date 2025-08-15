@@ -1,0 +1,22 @@
+# Use Node.js for development and building
+FROM node:18-alpine
+
+# Set working directory
+WORKDIR /app
+
+# Copy package files
+COPY package*.json ./
+
+# Install dependencies
+RUN npm install
+
+# Copy source code
+COPY . .
+
+# Expose port for development
+EXPOSE 3000
+
+# Command to run build test
+CMD ["npm", "run", "build"]
+
+# For development server, override with: docker-compose -f docker-compose.dev.yml run dev npm run dev

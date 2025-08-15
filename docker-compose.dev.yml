@@ -1,0 +1,24 @@
+version: "3.8"
+
+services:
+  dev:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    volumes:
+      - .:/app
+      - /app/node_modules
+    container_name: coreai-website-dev
+    ports:
+      - "3000:3000"
+    command: ["npm", "run", "dev"]
+    
+  build:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    volumes:
+      - .:/app
+      - /app/node_modules
+    container_name: coreai-website-build
+    command: ["npm", "run", "build"]
