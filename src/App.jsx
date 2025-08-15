@@ -62,14 +62,6 @@ function App() {
     { label: 'About', id: 'about' },
   ]
 
-  // Pain points data
-  const painPoints = [
-    "Manual workflows slow us down.",
-    "Knowledge is buried across tools and teams.",
-    "We store huge amounts of data but can't extract insights.",
-    "Internal tools don't talk to each other — copy-paste nightmare."
-  ]
-
   // Capabilities data
   const capabilities = [
     { icon: Brain, text: "Learns/adapts; makes real-time decisions to achieve goals" },
@@ -300,18 +292,6 @@ function App() {
             <p className="text-xl sm:text-2xl text-muted-foreground mb-8 max-w-4xl mx-auto">
               We deploy AI agents that automate workflows, augment teams, and orchestrate outcomes across your business.
             </p>
-
-            {/* Pain Points */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8 max-w-4xl mx-auto">
-              {painPoints.map((point, index) => (
-                <Badge key={index} variant="secondary" className="p-3 text-sm">
-                  {point}
-                </Badge>
-              ))}
-              <Badge variant="outline" className="p-3 text-sm col-span-1 sm:col-span-2">
-                High administrative overhead.
-              </Badge>
-            </div>
 
             {/* CTAs */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
