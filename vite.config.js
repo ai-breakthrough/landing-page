@@ -6,7 +6,7 @@ import path from "path";
 const getBasePath = () => {
   // For GitHub Pages deployment
   if (process.env.GITHUB_PAGES === "true") {
-    return "/coreai-website/";
+    return "/landing-page/";
   }
   // For local development and testing
   return "/";
