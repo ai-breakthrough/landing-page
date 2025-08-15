@@ -2,9 +2,25 @@
 
 A React-based website served using Docker and Nginx, with automatic deployment to GitHub Pages.
 
-## Docker Setup
+## Local Development
 
-This project is configured to run locally using Docker and Docker Compose.
+This project can be run locally in multiple ways using Docker.
+
+### Quick Start (Recommended)
+
+Use the development script for easy setup:
+
+```bash
+./dev.sh
+```
+
+This will present you with options to:
+- Start development server with live reload
+- Build for production
+- Serve production build
+- Stop all containers
+
+### Manual Docker Commands
 
 ### Prerequisites
 
@@ -13,8 +29,8 @@ This project is configured to run locally using Docker and Docker Compose.
 
 ### Running the Website
 
+#### Option 1: Production Build (Static Files)
 1. **Build and start the container:**
-
    ```bash
    docker-compose up -d
    ```
@@ -26,6 +42,23 @@ This project is configured to run locally using Docker and Docker Compose.
    ```bash
    docker-compose down
    ```
+
+#### Option 2: Development Server (Live Reload)
+1. **Start development server:**
+   ```bash
+   docker-compose -f docker-compose.dev.yml up dev
+   ```
+
+2. **Access the website:**
+   Open your browser and navigate to: http://localhost:3000
+   
+3. **Live reload enabled:**
+   Changes to your source code will automatically refresh the browser
+
+#### Option 3: Build Only
+```bash
+docker-compose -f docker-compose.dev.yml up build
+```
 
 ### Development
 
