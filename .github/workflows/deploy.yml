@@ -32,7 +32,7 @@ jobs:
       - name: Install dependencies
         run: |
           npm cache clean --force
-          npm install --no-package-lock
+          npm install
 
       - name: Build project
         run: npm run build
@@ -63,6 +63,7 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           path: "./dist"
+          retention-days: 1
 
   deploy:
     environment:
